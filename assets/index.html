@@ -46,7 +46,7 @@
             };
 
             var currentHash = window.location.hash;
-            if (currentHash.startsWith("target_origin") || currentHash == "") {
+            if (currentHash.startsWith("#target_origin") || currentHash == "") {
                 currentHash = "#Start"
             }
             $('h2').text("Hash value is " + currentHash);
