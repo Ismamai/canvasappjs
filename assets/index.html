@@ -28,61 +28,28 @@
   </nav>
 
 <button id="submitButton" class="btn btn-outline-success my-2 my-sm-0" type="submit">alert</button>
+<div id="mobileScreen"></div>
 
-    <h1>We are on page</h1>
-    <h2></h2>
-    <p id="forward">Go to Second page</p>
-    <p id="back">Go Back</p>
+    <script>
+        var sampleViews = {};
+    </script>
+
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script type="text/javascript" src="https://masterbox-dev-ed.my.salesforce.com/canvas/sdk/js/44.0/canvas-all.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <script>
-        $(document).ready(function () {
-            window.onhashchange = function () {
-                console.log("Hash is currently " + window.location.hash);
-                $('h2').text("Hash value is " + window.location.hash);
-            };
 
-            var currentHash = window.location.hash;
+    <script src="lib/react.min.js"></script>
+    <script src="lib/react-dom.min.js"></script>
+    <script src="lib/react-router.min.js"></script>
+    <script src="lib/react-router-dom.min.js"></script>
 
-            $('h2').text("Hash value is " + currentHash);
-            $('#forward').click(function () {
+    <script src="fullScreens.js"></script>
+    <script src="mapControls.js"></script>
+    <script src="next.js"></script>
 
-                console.log("Go to second page");
-                var hash = window.location.hash;
-                var number;
-                if (hash !== "") {
-                    number = hash.substr(1);
-                    if (isNaN(number)) {
-                        number = 1;
-                    } else {
-                        number = Number(number) + 1;
-                    }
-                } else {
-                    number = 1;
-                }
-                var newHash = "#" + number;
+    <script src="apps.js"></script>
 
-                window.location.hash = newHash;
-            });
-
-            $('#back').click(function () {
-                var currentHash = window.location.hash;
-                if (currentHash.startsWith("#target_origin") || currentHash === "") {
-                    console.log("On first page, cannot go back");
-                } else {
-                    console.log("User clicks on Go back");
-                    history.back();
-                }
-            });
-
-        });
-
-
-
-
-    </script>
   </body>
 </html>
