@@ -30,8 +30,8 @@
 <button id="submitButton" class="btn btn-outline-success my-2 my-sm-0" type="submit">alert</button>
 
 
-    <p>Go to Second page</p>
-
+    <p id="forward">Go to Second page</p>
+    <p id="back">Go Back</p>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script type="text/javascript" src="https://masterbox-dev-ed.my.salesforce.com/canvas/sdk/js/44.0/canvas-all.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -39,12 +39,34 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script>
         $(document).ready(function () {
+            window.onhashchange = function () {
+                console.log("Hash is currently " + window.location.hash);
+            };
 
-            $('p').click(function () {
+            $('#forward').click(function () {
+
                 console.log("Go to second page");
-                window.location = "second.html"
+                var hash = window.location.hash;
+                var number;
+                if (hash !== "") {
+                    number = hash.substr(1);
+                    number = Number(number) + 1;
+                } else {
+                    number = 1;
+                }
+                window.location.hash = "#" + number;
+                location.reload();
             });
+
+            $('#back').click(function () {
+                console.log("User clicks on Go back");
+                history.back();
+            });
+
         });
+
+
+
 
     </script>
   </body>
