@@ -45,7 +45,11 @@
                 $('h2').text("Hash value is " + window.location.hash);
             };
 
-            $('h2').text("Hash value is " + window.location.hash);
+            var currentHash = window.location.hash;
+            if (currentHash.startsWith("target_origin") || currentHash == "") {
+                currentHash = "#Start"
+            }
+            $('h2').text("Hash value is " + currentHash);
             $('#forward').click(function () {
 
                 console.log("Go to second page");
@@ -68,8 +72,13 @@
             });
 
             $('#back').click(function () {
-                console.log("User clicks on Go back");
-                history.back();
+                var currentHash = window.location.hash;
+                if (currentHash.startsWith("#target_origin") || currentHash === "") {
+                    console.log("On first page, cannot go back");
+                } else {
+                    console.log("User clicks on Go back");
+                    history.back();
+                }
             });
 
         });
