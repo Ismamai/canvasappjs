@@ -40,6 +40,11 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
                         "This is the main page"
                     ),
                     React.createElement(
+                        "h2",
+                        null,
+                        " We are currently on initial page"
+                    ),
+                    React.createElement(
                         "button",
                         { onClick: this.goNext },
                         " Next"

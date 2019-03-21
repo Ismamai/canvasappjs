@@ -15,6 +15,7 @@
             return (
                 <div>
                     <h1>This is the main page</h1>
+                    <h2> We are currently on initial page</h2>
                     <button onClick={this.goNext}> Next</button>
                 </div>
             );

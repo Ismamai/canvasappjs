@@ -42,7 +42,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
                         React.createElement(
                             "div",
                             null,
-                            React.createElement(ReactRouterDOM.Route, { path: "*", component: MapControls }),
+                            React.createElement(ReactRouterDOM.Route, { exact: true, path: "/", component: MapControls }),
                             React.createElement(ReactRouterDOM.Route, { path: "/Next/:featureId", component: Next })
                         )
                     )

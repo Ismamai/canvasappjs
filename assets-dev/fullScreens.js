@@ -21,7 +21,7 @@
                 <div className={"fullScreenMain"}>
                     <ReactRouterDOM.HashRouter >
                         <div>
-                            <ReactRouterDOM.Route path="*" component={MapControls} />
+                            <ReactRouterDOM.Route exact path="/" component={MapControls} />
                             <ReactRouterDOM.Route path="/Next/:featureId" component={Next} />
                         </div>
                     </ReactRouterDOM.HashRouter>
