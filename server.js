@@ -27,8 +27,7 @@ app.post('/', function (req, res) {
   var hash = CryptoJS.HmacSHA256(context, consumerSecret);
   var b64Hash = CryptoJS.enc.Base64.stringify(hash);
   if (hashedContext === b64Hash) {
-    res.send("Everyting is ok");
-    res.render('index', { req: req.body, res: res.data });
+    res.render('/index', { req: req.body, res: res.data });
   } else {
     res.send("authentication failed");
   };
