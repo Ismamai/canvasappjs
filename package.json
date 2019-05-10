@@ -4,11 +4,15 @@
   "description": "\"# canvasappjs\"",
   "main": "server.js",
   "dependencies": {
+    "body-parser": "~1.2.2",
+    "crypto-js": "~3.1.6",
     "express": "^4.16.4",
-    "sfdc": "0.0.1",
+    "ejs": "~2.6.1",
     "grunt": "^1.0.3",
     "react": "^15.6.1",
-    "react-dom": "^15.6.1"
+    "react-dom": "^15.6.1",
+    "request": "~2.36.0",
+    "sfdc": "0.0.1"
   },
   "devDependencies": {
     "babel-preset-es2015": "^6.24.1",
