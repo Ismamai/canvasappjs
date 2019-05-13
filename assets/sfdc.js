@@ -9,6 +9,6 @@ var es = {
 
 };
 es.SFDC = {
-    signedRequest: req.body.signed_request
+    signedRequest: signedRequest
 };
 es.SFDC.client = new sfdcClient();
