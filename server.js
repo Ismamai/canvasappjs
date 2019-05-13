@@ -8,12 +8,13 @@ var consumerSecret = process.env.CANVAS_CONSUMER_SECRET;
 const port = process.env.PORT || 3000;
 // middleware
 // __dirname - stores path to directory
-app.use(express.static('/assets'));
+app.use(express.static(__dirname + '/assets'));
 
 //https://rajvakati.com/2017/10/19/salesforce-node-js-canvas-signed-request/
 
 // app.use(express.static(path.join(__dirname, '/')));
 app.set('view engine', 'ejs');
+app.set('views', '/assets');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ entended: true }));
 
