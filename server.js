@@ -23,7 +23,6 @@ app.get('/', function (req, res) {
 });
 app.post('/', function (req, res) {
   var signed_req = req.body.signed_request;
-  window.signedRequestJson = signed_req;
   var hashedContext = signed_req.split('.')[0];
   var context = signed_req.split('.')[1];
   var hash = CryptoJS.HmacSHA256(context, consumerSecret);

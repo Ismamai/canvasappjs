@@ -9,6 +9,6 @@ var es = {
 
 };
 es.SFDC = {
-    signedRequest: signedCanvasRequestJson
+    signedRequest: req.body.signed_request
 };
 es.SFDC.client = new sfdcClient();
