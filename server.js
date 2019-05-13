@@ -8,7 +8,7 @@ var consumerSecret = process.env.CANVAS_CONSUMER_SECRET;
 const port = process.env.PORT || 3000;
 // middleware
 // __dirname - stores path to directory
-app.use(express.static(path.join(__dirname,  '/assets')));
+app.use(express.static('/assets'));
 
 //https://rajvakati.com/2017/10/19/salesforce-node-js-canvas-signed-request/
 
@@ -27,8 +27,7 @@ app.post('/', function (req, res) {
   var hash = CryptoJS.HmacSHA256(context, consumerSecret);
   var b64Hash = CryptoJS.enc.Base64.stringify(hash);
   if (hashedContext === b64Hash) {
-    // res.render('index', {req: req.body, res: res.data});
-      res.send(path.join(__dirname, '/assets'));
+    res.render('index', {req: req.body, res: res.data});
   } else {
     res.send("authentication failed");
   }
