@@ -1,4 +1,4 @@
-var signedRequestJson = decode(req.body.signed_request, consumerSecret);
+var signedRequestJson = Sfdc.canvas.decode(req.body.signed_request, consumerSecret);
 Sfdc.canvas(function() {
     // Save the token
     Sfdc.canvas.oauth.token(window.signedRequestJson.oauthToken);
