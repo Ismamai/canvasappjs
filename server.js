@@ -28,7 +28,13 @@ app.post('/', function (req, res) {
   var hash = CryptoJS.HmacSHA256(context, consumerSecret);
   var b64Hash = CryptoJS.enc.Base64.stringify(hash);
   if (hashedContext === b64Hash) {
-    res.render('index', {req: req.body, res: res.data});
+    // You could save this information in the user session if needed
+    var signedRequest = decode(req.body.signed_request, consumerSecret);
+
+        // context = signedRequest.context,
+        // oauthToken = signedRequest.client.oauthToken,
+        // instanceUrl = signedRequest.client.instanceUrl,
+    res.render('index', {req: req.body, res: res.data, signedRequest:signedRequest});
   } else {
     res.send("authentication failed");
   }
