@@ -33,7 +33,13 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
         }, {
             key: "goBack",
             value: function goBack() {
-                history.back();
+                es.SFDC.client.navigateBack();
+                // history.back()
+            }
+        }, {
+            key: "open",
+            value: function open() {
+                es.SFDC.client.openObject("00Q1t000004EoE8");
             }
         }, {
             key: "render",
@@ -62,6 +68,11 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
                         "button",
                         { onClick: this.goBack },
                         " Back"
+                    ),
+                    React.createElement(
+                        "button",
+                        { onClick: this.open },
+                        " Open record"
                     )
                 );
             }
