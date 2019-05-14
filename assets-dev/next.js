@@ -14,7 +14,8 @@
         }
 
         goBack() {
-            history.back()
+            es.SFDC.client.navigateBack();
+            // history.back()
         }
 
 
