@@ -18,6 +18,10 @@
             // history.back()
         }
 
+        open() {
+            es.SFDC.client.openObject("00Q1t000004EoE8");
+        }
+
 
         render() {
             return (
@@ -26,6 +30,7 @@
                     <h2> We are currently on {this.props.match.params.featureId} </h2>
                     <button onClick={this.goNext}> Next</button>
                     <button onClick={this.goBack}> Back</button>
+                    <button onClick={this.open}> Open record</button>
 
                 </div>
             );
