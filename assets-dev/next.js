@@ -14,8 +14,8 @@
         }
 
         goBack() {
-            es.SFDC.client.navigateBack();
-            // history.back()
+            // es.SFDC.client.navigateBack();
+            history.back()
         }
 
         open() {

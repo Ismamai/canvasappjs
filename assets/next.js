@@ -33,8 +33,8 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
         }, {
             key: "goBack",
             value: function goBack() {
-                es.SFDC.client.navigateBack();
-                // history.back()
+                // es.SFDC.client.navigateBack();
+                history.back();
             }
         }, {
             key: "open",
