@@ -19,6 +19,7 @@
         }
 
         open() {
+            alert("going to open an object");
             es.SFDC.client.openObject("00Q1t000004EoE8");
         }
 
