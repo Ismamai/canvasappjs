@@ -40,7 +40,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
             key: "open",
             value: function open() {
                 // alert("going to open an object");
-                es.SFDC.client.openObject("00Q1t000004EoE8");
+                es.SFDC.client.createNewObject("Lead");
             }
         }, {
             key: "render",
@@ -73,7 +73,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
                     React.createElement(
                         "button",
                         { onClick: this.open },
-                        " Open record"
+                        " Create Lead"
                     )
                 );
             }
