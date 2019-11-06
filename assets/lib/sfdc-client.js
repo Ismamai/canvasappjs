@@ -53,11 +53,11 @@ var sfdcClient = function () {
         publish(event.channel, event.payload);
     }
 
-    function openObject(objectId) {
+    function createNewObject(type, data) {
         var operation = {
-            object: 'Lead',
-            action: 'Open',
-            params: {id: objectId}
+            object: type,
+            action: 'Create'+type,
+            params: data
         };
         sendEventToRemoteCanvas(operation);
     }
@@ -70,7 +70,7 @@ var sfdcClient = function () {
     }
 
     return {
-        openObject:openObject,
+        createNewObject:createNewObject,
         navigateBack:navigateBack
     }
 };

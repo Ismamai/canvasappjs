@@ -4,8 +4,8 @@
     class Next extends Component {
         constructor() {
             super();
-            this.goNext = this.goNext.bind(this)
-            this.goBack = this.goBack.bind(this)
+            this.goNext = this.goNext.bind(this);
+            this.goBack = this.goBack.bind(this);
         }
 
         goNext() {
@@ -20,7 +20,7 @@
 
         open() {
             // alert("going to open an object");
-            es.SFDC.client.openObject("00Q1t000004EoE8");
+            es.SFDC.client.createNewObject("Lead");
         }
 
 
@@ -31,7 +31,7 @@
                     <h2> We are currently on {this.props.match.params.featureId} </h2>
                     <button onClick={this.goNext}> Next</button>
                     <button onClick={this.goBack}> Back</button>
-                    <button onClick={this.open}> Open record</button>
+                    <button onClick={this.open}> Create Lead</button>
 
                 </div>
             );
